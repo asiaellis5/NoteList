@@ -12,13 +12,3 @@
   assert.isTrue(notelist.notes[0].showNote() === 'hello')
   console.log('addNoteList test passing')
 })();
-
-// (function listNotes() {
-//   var notelist = new NoteList()
-  
-//   notelist.add('hello')
-//   notelist.add('test')
-//   console.log(notelist.showNotes())
-//   assert.isTrue(notelist.showNotes() == 'hello', 'test')
-//   console.log("listNotes test")
-// })();
