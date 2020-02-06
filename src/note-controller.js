@@ -1,7 +1,10 @@
+"use strict";
+
 (function(exports) {
-  function NoteController(){
+  function NoteController(doc = document){
     this.noteListView = new NoteListView()
     this.noteList = this.noteListView.noteList
+    this.document = doc
   }
 
   NoteController.prototype.addNote = function(string) {
@@ -12,10 +15,10 @@
     return this.noteListView.display()
   }
 
-  NoteController.prototype.insert = function() {
+  NoteController.prototype.insert = function(id) {
     var message = this.viewNote()
-    var element = document.getElementById("app")
-
+    var element = this.document.getElementById(id)
+    
     element.innerHTML = message
   }
 

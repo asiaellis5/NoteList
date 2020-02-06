@@ -1,3 +1,5 @@
+"use strict";
+
 (function testNoteList() {
   var noteList = new NoteList()
   assert.isTrue(noteList.notes.length === 0);
