@@ -12,5 +12,7 @@
   notelist.add('test')
   assert.isTrue(notelist.notes.length === 2)
   assert.isTrue(notelist.notes[0].showNote() === 'hello')
+  assert.isTrue(notelist.notes[0].id === 0)
+  assert.isTrue(notelist.notes[1].id === 1)
   console.log('addNoteList test passing')
 })();

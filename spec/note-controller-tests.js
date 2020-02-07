@@ -18,7 +18,7 @@
 (function testViewNote() {
   var noteController = new NoteController()
   noteController.addNote('testOne')
-  assert.isTrue(noteController.viewNote() === '<ul><li><div>testOne</div></li></ul>')
+  assert.isTrue(noteController.viewNote() === "<ul><li><div><a href='#0'>testOne</a></div></li></ul>")
   console.log('testViewNote passing')
 })();
 
