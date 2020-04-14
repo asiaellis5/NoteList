@@ -15,7 +15,7 @@
   <br>
   <br>
 
-  <form id ="text" action="#notes/new" method="post">
+  <form id ="text" action="#" method="post">
     New Note:<br>
     <textarea name="newnote" rows="4" cols="50" maxlength="200" placeholder="Enter new Note here"></textarea>
     <input type="submit" name="add"><br>
@@ -28,6 +28,11 @@
   <script src="src/note-list-model.js"></script>
   <script src="src/note-list-view.js"></script>
   <script src="src/note-controller.js"></script>
+  <script>
+    var noteController = new NoteController()
+    noteController.showNoteOnClick()
+    noteController.submitNote()
+  </script>
 
 </body>
 </html>

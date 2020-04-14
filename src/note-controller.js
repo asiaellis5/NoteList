@@ -22,43 +22,35 @@
     element.innerHTML = message
   }
 
+  NoteController.prototype.showNoteOnClick = function() {
+    var model = this.noteList
+    window.addEventListener("hashchange", () => {
+      var noteId = location.hash.split("#")[1]
+      var text = model.notes[noteId].text
+      document.getElementById("app").innerHTML = text
+    })
+  }
+
+
+  NoteController.prototype.submitNote = function() {
+    var element = document.getElementById("text")
+    var controller = this
+    element.addEventListener("submit", function(click){
+      click.preventDefault()
+      controller.addNote(click.srcElement.elements[0].value)
+      controller.insert('app')
+    })
+
+  }
+
+
 
   exports.NoteController = NoteController
 
 })(this);
 
-(function listenForSubmit() {
-  var element = document.getElementById("text")
-  element.addEventListener("submit", function(click) {
-    click.preventDefault()
-    console.log(click.srcElement.elements[0].value)
-    
-  })
-})();
-
-// var noteController = new NoteController()
-// noteController.addNote('testOne')
-// noteController.addNote('textTwo')
-// noteController.insert('app')
 
 
-(function makeUrlChangeShowNote() {
-  window.addEventListener("hashchange", showHTMLForCurrentPage);
 
-
-function showHTMLForCurrentPage() {
-  showNote(getHTMLFromUrl(window.location))
-}
-
-function getHTMLFromUrl(location) {
-  return location.hash.split("#")[1]
-}
-
-function showNote(id) {
-  document
-    .getElementById("app")
-    .innerHTML = noteController.noteList.showNotes(id)[id].showNote()
-}
-})();
 
   
