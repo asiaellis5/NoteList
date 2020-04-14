@@ -31,7 +31,6 @@
     })
   }
 
-
   NoteController.prototype.submitNote = function() {
     var element = document.getElementById("text")
     var controller = this
