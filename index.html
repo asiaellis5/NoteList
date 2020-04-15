@@ -6,7 +6,9 @@
  
   <title>Daily Notes</title>
 </head>
-<body>
+<body id="body">
+
+  <div id="container">
 
   <center><h1>Notes:</h1>
 
@@ -24,6 +26,8 @@
     <input type="submit" name="add"><br>
   </form></center>
 
+
+
   
 
 
@@ -35,7 +39,11 @@
     var noteController = new NoteController()
     noteController.showNoteOnClick()
     noteController.submitNote()
+    function goBack() {
+      window.history.back()
+    }
   </script>
+  </div>
 
 </body>
 </html>

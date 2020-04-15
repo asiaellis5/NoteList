@@ -26,7 +26,7 @@
     var model = this.noteList
     window.addEventListener("hashchange", () => {
       var noteId = location.hash.split("#")[1]
-      var text = model.notes[noteId].text
+      var text ="<div>" + model.notes[noteId].text + "</div><br><div><button onClick='goBack()'>Go Back</button></div>"
       document.getElementById("app").innerHTML = text
     })
   }
